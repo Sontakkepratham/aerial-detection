@@ -1,0 +1,19 @@
+# Aerial Detection
+
+This project is aimed at detecting objects in aerial images using various machine learning techniques. 
+
+## Installation
+
+Instructions on how to install and set up the project.
+
+## Usage
+
+Instructions on how to use the project.
+
+## Contributing
+
+Guidelines for contributing to the project.
+
+## License
+
+Information about the project's license.
