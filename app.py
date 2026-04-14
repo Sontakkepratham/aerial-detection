@@ -33,11 +33,20 @@ if uploaded_file is not None:
         image = Image.open(uploaded_file).convert("RGB")
         st.image(image, caption="Uploaded Image", use_column_width=True)
 
-        # Preprocess
-        img = image.resize(IMG_SIZE)
-        img = np.array(img) / 255.0
-        img = np.expand_dims(img, axis=0).astype(np.float32)
+# Preprocess
+img = image.resize(IMG_SIZE)
+img = np.array(img) / 255.0
 
+# Expand dims
+img = np.expand_dims(img, axis=0).astype(np.float32)
+
+# FIX: Handle channel format
+input_shape = session.get_inputs()[0].shape
+
+# If model expects (1, 3, 224, 224)
+if input_shape[1] == 3:
+    img = np.transpose(img, (0, 3, 1, 2))
+  
         # Inference
         input_name = session.get_inputs()[0].name
         output = session.run(None, {input_name: img})
