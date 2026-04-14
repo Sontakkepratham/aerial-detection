@@ -47,7 +47,7 @@ if uploaded_file is not None:
       label = "Bird"
       confidence = 1-prediction
     st.subheader(f"Prediction: {label}")
-    st.write(f"Confidence: {confidence}.2f}")
+    st.write(f"Confidence: {confidence:.2f}")
     st.progress(int(confidence *100))
   except Exception as e:
     st.error("Error processing image")
