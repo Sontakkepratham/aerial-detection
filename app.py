@@ -33,7 +33,7 @@ if uploaded_file is not None:
     st.image(image, caption="Uploaded Image", use_column_width=True)
     img = image.resize(IMG_SIZE)
     img = np.array(img) / 255.0
-    img = np.expand_dims(img, axis0).astype(np.float32)
+    img = np.expand_dims(img, axis=0).astype(np.float32)
     input_shape = session.get_inputs()[0].shape
     if input_shape[1] == 3:
       img = np.transpose(img, (0, 3, 1, 2))
