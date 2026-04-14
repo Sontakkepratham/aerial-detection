@@ -17,6 +17,9 @@ def load_model():
   model_path = os.path.join(os.getcwd(), "model.onnx")
   session = ort.InferenceSession(model_path)
   return session
+session = load_model()
+
+st.write("Model Input Shape:", session.get_inputs()[0].shape)
 
 IMG_SIZE = (224, 224)
 
