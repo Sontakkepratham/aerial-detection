@@ -54,7 +54,7 @@ if uploaded_file is not None:
     st.text(str(e))
 
 st.markdown("---")
-st.caption("Model: MobileNetV2 + ONNX | Labmentix Project
+st.caption("Model: MobileNetV2 + ONNX | Labmentix Project")
 
 
 
