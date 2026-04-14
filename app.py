@@ -14,10 +14,9 @@ st.write("Upload an aerial image to classify it as **Bird or Drone **")
 
 @st.cache_resource
 def load_model():
-  model = tf.keras.models.load_model("final_model.h5")
-  return model
-
-model = load_model()
+  session = ort.InferenceSession("model.onnx")
+  return session
+session = load_model()
 
 IMG_SIZE = (224, 224)
 
