@@ -46,10 +46,10 @@ if uploaded_file is not None:
         THRESHOLD = 0.5
 
         if prediction > THRESHOLD:
-            label = "🚁 Drone"
+            label = "Drone"
             confidence = prediction
         else:
-            label = "🐦 Bird"
+            label = "Bird"
             confidence = 1 - prediction
 
         # Output
