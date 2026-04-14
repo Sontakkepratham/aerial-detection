@@ -11,12 +11,12 @@ st.title("Aerial Object Classification")
 st.write("Upload an aerial image to classify it as **Bird or Drone **")
 
 # LOAD MODEL
-
+import os
 @st.cache_resource
 def load_model():
-  session = ort.InferenceSession("model.onnx")
+  model_path = os.path.join(os.getcwd(), "model.onnx")
+  session = ort.InferenceSession(model_path)
   return session
-session = load_model()
 
 IMG_SIZE = (224, 224)
 
