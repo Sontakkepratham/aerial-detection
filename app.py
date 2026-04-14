@@ -69,7 +69,7 @@ if input_shape[1] == 3:
         st.progress(int(confidence * 100))
 
     except Exception as e:
-        st.error("Error processing image. Try another image.")
+        st.error("Error processing image")
         st.text(str(e))
       
 # FOOTER
