@@ -29,7 +29,7 @@ uploaded_file = st.file_uploader("Upload Image", type=["jpg", "jpeg", "png"])
 if uploaded_file is not None:
   try:
     image = Image.open(uploaded_file).convert("RGB")
-    st.image(image, caption="Uploaded Image", use_column_widt=True)
+    st.image(image, caption="Uploaded Image", use_column_width=True)
     img = image.resize(IMG_SIZE)
     img = np.array(img) / 255.0
     img = np.expand_dims(img, axis=0).astype(np.float32)
