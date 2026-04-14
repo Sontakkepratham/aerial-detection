@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from PIL import image
+from PIL import Image
 import onnxruntime as ort
 import os
 
